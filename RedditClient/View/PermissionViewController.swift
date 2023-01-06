@@ -11,9 +11,7 @@ class PermissionViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let persistenceService = PersistenceService()
-
-    var permissionKind: PermissionKind = .camera
+    let viewModel = PermissionViewModel(permissionKind: .camera)
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
@@ -25,22 +23,16 @@ class PermissionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        switch permissionKind {
-            case .camera:
-                lblTitle.text = "Camera"
-            case .notifications:
-                lblTitle.text = "Notifications"
-            case .location:
-                lblTitle.text = "Location"
-        }
-
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        lblTitle.text = viewModel.title
+        lblDescription.text = viewModel.description
     }
 
     // MARK: - Behavior
 
     @IBAction func onTouchOk(_ sender: UIButton) {
-        goNext()
+        allowOrEnable()
     }
     
     @IBAction func onTouchCancel(_ sender: UIButton) {
@@ -48,21 +40,37 @@ class PermissionViewController: UIViewController {
     }
 
     func goNext() {
-        let navFlow = Constant.permissionNavigationFlow
-        var nextPermissionKind: PermissionKind!
-        if let navFlowIndex = navFlow.firstIndex(of: permissionKind),
-            navFlowIndex + 1 < navFlow.count {
-            nextPermissionKind = navFlow[navFlowIndex + 1]
-        } else {
-            // We are in the last screen of the permissions flow
-            persistenceService.isPermissionFlowComplete = true
+        guard let nextPermissionKind = viewModel.nextPermission() else {
             dismiss(animated: true)
             return
         }
 
         let vc = PermissionViewController.instantiate()
-        vc.permissionKind = nextPermissionKind
+        vc.viewModel.permissionKind = nextPermissionKind
         navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func allowOrEnable() {
+        switch viewModel.permissionKind {
+            case .camera:
+                viewModel.allowCamera { [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.goNext()
+                    }
+                }
+            case .notifications:
+                viewModel.enableNotifications { [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.goNext()
+                    }
+                }
+            case .location:
+                viewModel.enableLocation { [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.goNext()
+                    }
+                }
+        }
     }
     
 }
