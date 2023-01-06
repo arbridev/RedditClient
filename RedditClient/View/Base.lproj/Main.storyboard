@@ -66,6 +66,7 @@
                     <connections>
                         <outlet property="btnConfiguration" destination="AM0-9d-79W" id="z6g-cr-PQR"/>
                         <segue destination="dwA-au-YkM" kind="presentation" identifier="ToPermissions" modalPresentationStyle="fullScreen" id="IjX-wy-SLv"/>
+                        <segue destination="dwA-au-YkM" kind="presentation" identifier="ToPermissionsNotAnimated" animates="NO" modalPresentationStyle="fullScreen" id="R3o-Vt-bGm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -202,6 +203,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dwA-au-YkM" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZjF-5L-bfg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BeH-iQ-2rq">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -216,6 +218,9 @@
             <point key="canvasLocation" x="907.63358778625945" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R3o-Vt-bGm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
