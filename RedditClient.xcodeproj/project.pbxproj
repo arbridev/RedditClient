@@ -7,24 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144317E32967C15E00E63723 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E22967C15E00E63723 /* Instantiable.swift */; };
+		144317E52967C19800E63723 /* UIViewController+Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E42967C19800E63723 /* UIViewController+Instantiable.swift */; };
+		144317E82967C30A00E63723 /* PermissionKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E72967C30A00E63723 /* PermissionKind.swift */; };
 		14AC149D29675CC600390564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC149C29675CC600390564 /* AppDelegate.swift */; };
 		14AC149F29675CC600390564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC149E29675CC600390564 /* SceneDelegate.swift */; };
-		14AC14A129675CC600390564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14A029675CC600390564 /* ViewController.swift */; };
 		14AC14A429675CC600390564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC14A229675CC600390564 /* Main.storyboard */; };
 		14AC14A629675CCB00390564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AC14A529675CCB00390564 /* Assets.xcassets */; };
 		14AC14A929675CCB00390564 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC14A729675CCB00390564 /* LaunchScreen.storyboard */; };
+		14AC14B3296775EB00390564 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14B2296775EB00390564 /* HomeViewController.swift */; };
+		14AC14B52967762700390564 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14B42967762700390564 /* PermissionViewController.swift */; };
+		14AC14B82967884100390564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14B72967884100390564 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144317E22967C15E00E63723 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
+		144317E42967C19800E63723 /* UIViewController+Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiable.swift"; sourceTree = "<group>"; };
+		144317E72967C30A00E63723 /* PermissionKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionKind.swift; sourceTree = "<group>"; };
 		14AC149929675CC600390564 /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AC149C29675CC600390564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14AC149E29675CC600390564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14AC14A029675CC600390564 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14AC14A329675CC600390564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14AC14A529675CCB00390564 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14AC14A829675CCB00390564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14AC14AA29675CCB00390564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14AC14B029676AA700390564 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		14AC14B2296775EB00390564 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		14AC14B42967762700390564 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		14AC14B72967884100390564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +48,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		144317E02967C12400E63723 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				144317E22967C15E00E63723 /* Instantiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		144317E12967C13600E63723 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				144317E42967C19800E63723 /* UIViewController+Instantiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		144317E62967C2E200E63723 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				144317E72967C30A00E63723 /* PermissionKind.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		14AC149029675CC500390564 = {
 			isa = PBXGroup;
 			children = (
@@ -58,15 +92,36 @@
 		14AC149B29675CC600390564 /* RedditClient */ = {
 			isa = PBXGroup;
 			children = (
+				14AC14B62967883100390564 /* Shared */,
+				14AC14B12967748300390564 /* View */,
 				14AC149C29675CC600390564 /* AppDelegate.swift */,
 				14AC149E29675CC600390564 /* SceneDelegate.swift */,
-				14AC14A029675CC600390564 /* ViewController.swift */,
-				14AC14A229675CC600390564 /* Main.storyboard */,
 				14AC14A529675CCB00390564 /* Assets.xcassets */,
-				14AC14A729675CCB00390564 /* LaunchScreen.storyboard */,
 				14AC14AA29675CCB00390564 /* Info.plist */,
 			);
 			path = RedditClient;
+			sourceTree = "<group>";
+		};
+		14AC14B12967748300390564 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14AC14A729675CCB00390564 /* LaunchScreen.storyboard */,
+				14AC14A229675CC600390564 /* Main.storyboard */,
+				14AC14B2296775EB00390564 /* HomeViewController.swift */,
+				14AC14B42967762700390564 /* PermissionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14AC14B62967883100390564 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				14AC14B72967884100390564 /* Constants.swift */,
+				144317E02967C12400E63723 /* Protocols */,
+				144317E12967C13600E63723 /* Extensions */,
+				144317E62967C2E200E63723 /* Enums */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AC14A129675CC600390564 /* ViewController.swift in Sources */,
+				14AC14B82967884100390564 /* Constants.swift in Sources */,
+				144317E32967C15E00E63723 /* Instantiable.swift in Sources */,
+				144317E52967C19800E63723 /* UIViewController+Instantiable.swift in Sources */,
 				14AC149D29675CC600390564 /* AppDelegate.swift in Sources */,
 				14AC149F29675CC600390564 /* SceneDelegate.swift in Sources */,
+				14AC14B3296775EB00390564 /* HomeViewController.swift in Sources */,
+				144317E82967C30A00E63723 /* PermissionKind.swift in Sources */,
+				14AC14B52967762700390564 /* PermissionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,20 +354,22 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camere usage take photos";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location when in use to find friends nearby";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.arbridev.RedditClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,20 +385,22 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camere usage take photos";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location when in use to find friends nearby";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.arbridev.RedditClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
