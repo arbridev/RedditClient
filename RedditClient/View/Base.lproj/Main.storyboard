@@ -38,9 +38,22 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OND-FY-WK6">
                                 <rect key="frame" x="16" y="109" width="361" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PME-eM-1dQ">
+                                        <rect key="frame" x="0.0" y="8" width="361" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="w1t-EV-x3l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1lS-t4-fKr"/>
+                                    <constraint firstAttribute="trailing" secondItem="PME-eM-1dQ" secondAttribute="trailing" id="5NN-0y-KV8"/>
+                                    <constraint firstItem="PME-eM-1dQ" firstAttribute="centerY" secondItem="OND-FY-WK6" secondAttribute="centerY" id="c4F-G4-wTf"/>
+                                    <constraint firstItem="PME-eM-1dQ" firstAttribute="leading" secondItem="OND-FY-WK6" secondAttribute="leading" id="jNJ-sf-w4Z"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-IS-EuO">
@@ -65,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="btnConfiguration" destination="AM0-9d-79W" id="z6g-cr-PQR"/>
+                        <outlet property="txtSearch" destination="PME-eM-1dQ" id="QeE-08-ew7"/>
                         <segue destination="dwA-au-YkM" kind="presentation" identifier="ToPermissions" modalPresentationStyle="fullScreen" id="IjX-wy-SLv"/>
                         <segue destination="dwA-au-YkM" kind="presentation" identifier="ToPermissionsNotAnimated" animates="NO" modalPresentationStyle="fullScreen" id="R3o-Vt-bGm"/>
                     </connections>

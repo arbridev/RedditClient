@@ -33,7 +33,7 @@ struct Post: Codable {
 // MARK: - PostData
 struct PostData: Codable {
     let title: String
-    let linkFlairText: String
+    let linkFlairText: String?
     let score: Int
     let postHint: String?
     let numComments: Int
