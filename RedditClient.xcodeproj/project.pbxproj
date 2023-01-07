@@ -14,6 +14,8 @@
 		144317E52967C19800E63723 /* UIViewController+Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E42967C19800E63723 /* UIViewController+Instantiable.swift */; };
 		144317E82967C30A00E63723 /* PermissionKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E72967C30A00E63723 /* PermissionKind.swift */; };
 		149A36C62968BD4400B04CA7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A36C52968BD4400B04CA7 /* LocationService.swift */; };
+		149A36C82969134C00B04CA7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A36C72969134C00B04CA7 /* NetworkService.swift */; };
+		149A36D2296926A700B04CA7 /* PostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A36D1296926A700B04CA7 /* PostsResponse.swift */; };
 		14AC149D29675CC600390564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC149C29675CC600390564 /* AppDelegate.swift */; };
 		14AC149F29675CC600390564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC149E29675CC600390564 /* SceneDelegate.swift */; };
 		14AC14A429675CC600390564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC14A229675CC600390564 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		144317E42967C19800E63723 /* UIViewController+Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiable.swift"; sourceTree = "<group>"; };
 		144317E72967C30A00E63723 /* PermissionKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionKind.swift; sourceTree = "<group>"; };
 		149A36C52968BD4400B04CA7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		149A36C72969134C00B04CA7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		149A36D1296926A700B04CA7 /* PostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsResponse.swift; sourceTree = "<group>"; };
 		14AC149929675CC600390564 /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AC149C29675CC600390564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14AC149E29675CC600390564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				1435824529685FC700BED547 /* PersistenceService.swift */,
 				149A36C52968BD4400B04CA7 /* LocationService.swift */,
+				149A36C72969134C00B04CA7 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -123,6 +128,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		149A36D0296925B100B04CA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				149A36D1296926A700B04CA7 /* PostsResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		14AC149029675CC500390564 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				1435824429685F9600BED547 /* Services */,
+				149A36D0296925B100B04CA7 /* Model */,
 				14AC14B12967748300390564 /* View */,
 				143582492968731800BED547 /* ViewModel */,
 				14AC14B62967883100390564 /* Shared */,
@@ -293,11 +307,13 @@
 				144317E52967C19800E63723 /* UIViewController+Instantiable.swift in Sources */,
 				14AC149D29675CC600390564 /* AppDelegate.swift in Sources */,
 				14AC149F29675CC600390564 /* SceneDelegate.swift in Sources */,
+				149A36D2296926A700B04CA7 /* PostsResponse.swift in Sources */,
 				14AC14B3296775EB00390564 /* HomeViewController.swift in Sources */,
 				149A36C62968BD4400B04CA7 /* LocationService.swift in Sources */,
 				144317E82967C30A00E63723 /* PermissionKind.swift in Sources */,
 				1435824B2968735E00BED547 /* PermissionViewModel.swift in Sources */,
 				1435824629685FC700BED547 /* PersistenceService.swift in Sources */,
+				149A36C82969134C00B04CA7 /* NetworkService.swift in Sources */,
 				14AC14B52967762700390564 /* PermissionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
