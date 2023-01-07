@@ -17,6 +17,7 @@ class HomeViewModel {
     private(set) var posts: [Post] = [Post]()
     private var cancellable: AnyCancellable?
     private var cancellableSearch: AnyCancellable?
+    private var afterPage: String?
 
     var searchPublisher: NotificationCenter.Publisher? {
         didSet {
@@ -29,13 +30,14 @@ class HomeViewModel {
     }
 
     func loadPosts() {
-        cancellable = networkService.fetchAll().sink { result in
+        cancellable = networkService.fetchAll(after: afterPage).sink { result in
             print("Result", result)
-        } receiveValue: { [weak self] posts in
+        } receiveValue: { [weak self] posts, after in
             let filtered = posts.filter({
                 $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image"
             })
             self?.posts = filtered
+            self?.afterPage = after
             self?.updateUI?()
         }
     }

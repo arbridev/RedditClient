@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
 
     let viewModel = HomeViewModel()
 
+    private let tblRefreshControl = UIRefreshControl()
+
     @IBOutlet weak private var btnConfiguration: UIButton!
     @IBOutlet weak private var txtSearch: UITextField!
     @IBOutlet weak private var tblPosts: UITableView!
@@ -29,8 +31,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tblPosts.dataSource = self
         txtSearch.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+
+        tblPosts.dataSource = self
+        tblPosts.refreshControl = tblRefreshControl
+        tblRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
 
         viewModel.updateUI = {
             self.update()
@@ -65,12 +70,17 @@ class HomeViewController: UIViewController {
         print(viewModel.posts as AnyObject)
         print("updating ui")
         tblPosts.reloadData()
+        tblRefreshControl.endRefreshing()
     }
 
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text, text.isEmpty {
             viewModel.loadPosts()
         }
+    }
+
+    @objc func pullToRefresh() {
+        viewModel.loadPosts()
     }
 
 }
