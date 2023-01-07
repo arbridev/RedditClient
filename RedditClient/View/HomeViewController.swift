@@ -9,24 +9,28 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    // MARK: - Nested types
+    // MARK: Nested types
 
     struct Segue {
         static let toPermissions = "ToPermissions"
         static let toPermissionsNotAnimated = "ToPermissionsNotAnimated"
     }
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let viewModel = HomeViewModel()
 
-    @IBOutlet weak var btnConfiguration: UIButton!
-    @IBOutlet weak var txtSearch: UITextField!
-    
-    // MARK: - Lifecycle
+    @IBOutlet weak private var btnConfiguration: UIButton!
+    @IBOutlet weak private var txtSearch: UITextField!
+    @IBOutlet weak private var tblPosts: UITableView!
+
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tblPosts.dataSource = self
+        txtSearch.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         viewModel.updateUI = {
             self.update()
@@ -51,7 +55,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-    // MARK: - Behavior
+    // MARK: Behavior
 
     @IBAction func onTouchConfiguration(_ sender: UIButton) {
         self.performSegue(withIdentifier: Segue.toPermissions, sender: self)
@@ -60,6 +64,41 @@ class HomeViewController: UIViewController {
     func update() {
         print(viewModel.posts as AnyObject)
         print("updating ui")
+        tblPosts.reloadData()
+    }
+
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text, text.isEmpty {
+            viewModel.loadPosts()
+        }
+    }
+
+}
+
+// MARK: - Table view data source
+
+extension HomeViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.posts.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = viewModel.posts[indexPath.row]
+
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+        }
+
+        var content = cell?.defaultContentConfiguration()
+        content?.text = post.data.title
+        content?.secondaryText = post.data.url
+
+        cell?.contentConfiguration = content
+
+        return cell!
     }
 
 }

@@ -78,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="btnConfiguration" destination="AM0-9d-79W" id="z6g-cr-PQR"/>
+                        <outlet property="tblPosts" destination="I4c-IS-EuO" id="99F-4z-UpS"/>
                         <outlet property="txtSearch" destination="PME-eM-1dQ" id="QeE-08-ew7"/>
                         <segue destination="dwA-au-YkM" kind="presentation" identifier="ToPermissions" modalPresentationStyle="fullScreen" id="IjX-wy-SLv"/>
                         <segue destination="dwA-au-YkM" kind="presentation" identifier="ToPermissionsNotAnimated" animates="NO" modalPresentationStyle="fullScreen" id="R3o-Vt-bGm"/>
