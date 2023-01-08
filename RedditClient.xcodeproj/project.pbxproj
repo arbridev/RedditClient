@@ -25,6 +25,10 @@
 		14AC14B3296775EB00390564 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14B2296775EB00390564 /* HomeViewController.swift */; };
 		14AC14B52967762700390564 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14B42967762700390564 /* PermissionViewController.swift */; };
 		14AC14B82967884100390564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC14B72967884100390564 /* Constants.swift */; };
+		14E27ABA296B03C100B66415 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AB8296B03C100B66415 /* PostTableViewCell.swift */; };
+		14E27ABB296B03C100B66415 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E27AB9296B03C100B66415 /* PostTableViewCell.xib */; };
+		14E27AC0296B13F100B66415 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 14E27ABF296B13F100B66415 /* Kingfisher */; };
+		14E27AC2296B196500B66415 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC1296B196500B66415 /* UITableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,9 @@
 		14AC14B2296775EB00390564 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		14AC14B42967762700390564 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		14AC14B72967884100390564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		14E27AB8296B03C100B66415 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		14E27AB9296B03C100B66415 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		14E27AC1296B196500B66415 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E27AC0296B13F100B66415 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				144317E42967C19800E63723 /* UIViewController+Instantiable.swift */,
+				14E27AC1296B196500B66415 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,8 +188,8 @@
 			children = (
 				14AC14A729675CCB00390564 /* LaunchScreen.storyboard */,
 				14AC14A229675CC600390564 /* Main.storyboard */,
-				14AC14B2296775EB00390564 /* HomeViewController.swift */,
-				14AC14B42967762700390564 /* PermissionViewController.swift */,
+				14E27ABC296B03C700B66415 /* Home */,
+				14E27ABD296B0F4300B66415 /* Permissions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +203,24 @@
 				144317E62967C2E200E63723 /* Enums */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		14E27ABC296B03C700B66415 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14AC14B2296775EB00390564 /* HomeViewController.swift */,
+				14E27AB8296B03C100B66415 /* PostTableViewCell.swift */,
+				14E27AB9296B03C100B66415 /* PostTableViewCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		14E27ABD296B0F4300B66415 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				14AC14B42967762700390564 /* PermissionViewController.swift */,
+			);
+			path = Permissions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +257,9 @@
 			dependencies = (
 			);
 			name = RedditClient;
+			packageProductDependencies = (
+				14E27ABF296B13F100B66415 /* Kingfisher */,
+			);
 			productName = RedditClient;
 			productReference = 14AC149929675CC600390564 /* RedditClient.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +292,9 @@
 				Base,
 			);
 			mainGroup = 14AC149029675CC500390564;
+			packageReferences = (
+				14E27ABE296B13F100B66415 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 14AC149A29675CC600390564 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -287,6 +320,7 @@
 				14AC14A929675CCB00390564 /* LaunchScreen.storyboard in Resources */,
 				14AC14A629675CCB00390564 /* Assets.xcassets in Resources */,
 				14AC14A429675CC600390564 /* Main.storyboard in Resources */,
+				14E27ABB296B03C100B66415 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AC14B82967884100390564 /* Constants.swift in Sources */,
+				14E27AC2296B196500B66415 /* UITableViewCell.swift in Sources */,
 				144317E32967C15E00E63723 /* Instantiable.swift in Sources */,
+				14E27ABA296B03C100B66415 /* PostTableViewCell.swift in Sources */,
 				144317E52967C19800E63723 /* UIViewController+Instantiable.swift in Sources */,
 				14AC149D29675CC600390564 /* AppDelegate.swift in Sources */,
 				14AC149F29675CC600390564 /* SceneDelegate.swift in Sources */,
@@ -599,6 +635,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14E27ABE296B13F100B66415 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14E27ABF296B13F100B66415 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14E27ABE296B13F100B66415 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14AC149129675CC500390564 /* Project object */;
 }

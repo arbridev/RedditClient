@@ -31,8 +31,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtSearch.leftView = getSearchTextFieldLeftView()
+        txtSearch.leftViewMode = .always
         txtSearch.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
+        tblPosts.register(PostTableViewCell.nib, forCellReuseIdentifier: PostTableViewCell.identifier)
         tblPosts.dataSource = self
         tblPosts.refreshControl = tblRefreshControl
         tblRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
@@ -44,11 +47,6 @@ class HomeViewController: UIViewController {
         let searchPublisher = NotificationCenter.default
             .publisher(for: UITextField.textDidChangeNotification, object: txtSearch)
         viewModel.searchPublisher = searchPublisher
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
         viewModel.loadPosts()
     }
 
@@ -73,6 +71,15 @@ class HomeViewController: UIViewController {
         tblRefreshControl.endRefreshing()
     }
 
+    private func getSearchTextFieldLeftView() -> UIImageView {
+        let searchIcon = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+        searchIcon.tintColor = .black
+        searchIcon.contentMode = .scaleAspectFit
+        searchIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        searchIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        return searchIcon
+    }
+
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text, text.isEmpty {
             viewModel.loadPosts()
@@ -95,20 +102,9 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = viewModel.posts[indexPath.row]
-
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        }
-
-        var content = cell?.defaultContentConfiguration()
-        content?.text = post.data.title
-        content?.secondaryText = post.data.url
-
-        cell?.contentConfiguration = content
-
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
+        cell.config(post: post)
+        return cell
     }
 
 }
