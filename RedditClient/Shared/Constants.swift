@@ -15,4 +15,6 @@ struct Constant {
         .location
     ]
 
+    static let standardCornerRadius: CGFloat = 15
+
 }

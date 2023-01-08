@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +23,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM0-9d-79W">
                                         <rect key="frame" x="0.0" y="0.6666666666666643" width="39.333333333333336" height="49"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="Text.Black"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="10" maxY="10"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="gearshape" catalog="system">
@@ -45,10 +46,11 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PME-eM-1dQ">
                                         <rect key="frame" x="0.0" y="8" width="361" height="34"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="Background.Input"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="w1t-EV-x3l"/>
                                         </constraints>
+                                        <color key="textColor" name="Dark"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -61,18 +63,18 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-IS-EuO">
-                                <rect key="frame" x="16" y="175" width="361" height="627"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="643"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="I4c-IS-EuO" firstAttribute="top" secondItem="OND-FY-WK6" secondAttribute="bottom" constant="16" id="DyW-rM-QHz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I4c-IS-EuO" secondAttribute="trailing" constant="16" id="FDd-uz-sK2"/>
+                            <constraint firstItem="I4c-IS-EuO" firstAttribute="top" secondItem="OND-FY-WK6" secondAttribute="bottom" id="DyW-rM-QHz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I4c-IS-EuO" secondAttribute="trailing" id="FDd-uz-sK2"/>
                             <constraint firstItem="OND-FY-WK6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="Sn4-yc-MdS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cHs-rl-mBt" secondAttribute="trailing" constant="16" id="cTy-cU-4h2"/>
-                            <constraint firstItem="I4c-IS-EuO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="deZ-Rx-mJT"/>
+                            <constraint firstItem="I4c-IS-EuO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="deZ-Rx-mJT"/>
                             <constraint firstItem="OND-FY-WK6" firstAttribute="top" secondItem="cHs-rl-mBt" secondAttribute="bottom" id="f9z-QB-lr2"/>
                             <constraint firstItem="cHs-rl-mBt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gnu-kD-iKd"/>
                             <constraint firstItem="cHs-rl-mBt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ot9-NZ-fKb"/>
@@ -242,6 +244,15 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="123"/>
+        <namedColor name="Background.Input">
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark">
+            <color red="0.14901960784313725" green="0.14901960784313725" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text.Black">
+            <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

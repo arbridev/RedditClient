@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
 
         tblPosts.register(PostTableViewCell.nib, forCellReuseIdentifier: PostTableViewCell.identifier)
         tblPosts.dataSource = self
+        tblPosts.separatorStyle = .none
+        tblPosts.showsVerticalScrollIndicator = false
         tblPosts.refreshControl = tblRefreshControl
         tblRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
 
@@ -72,8 +74,8 @@ class HomeViewController: UIViewController {
     }
 
     private func getSearchTextFieldLeftView() -> UIImageView {
-        let searchIcon = UIImageView(image: UIImage(systemName: "magnifyingglass"))
-        searchIcon.tintColor = .black
+        let searchIcon = UIImageView(image: UIImage.Icon.magnifyingGlass)
+        searchIcon.tintColor = .lightGray
         searchIcon.contentMode = .scaleAspectFit
         searchIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
         searchIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
@@ -102,7 +104,10 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = viewModel.posts[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: PostTableViewCell.identifier,
+            for: indexPath
+        ) as! PostTableViewCell
         cell.config(post: post)
         return cell
     }
