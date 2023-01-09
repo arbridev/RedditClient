@@ -8,7 +8,7 @@
 		<true/>
 	</dict>
 	<key>NSUserNotificationsUsageDescription</key>
-	<string>Allow notifications for personal news and updates</string>
+	<string>Enable notifications for personal news and updates</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

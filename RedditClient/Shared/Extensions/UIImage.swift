@@ -17,4 +17,10 @@ extension UIImage {
         static let defaultStyle = UIImage(named: "launch_bg")!
     }
 
+    struct Permissions {
+        static let camera = UIImage(named: "camera")!
+        static let bell = UIImage(named: "bell")!
+        static let map = UIImage(named: "map")!
+    }
+
 }

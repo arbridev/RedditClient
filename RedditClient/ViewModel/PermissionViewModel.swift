@@ -19,22 +19,22 @@ class PermissionViewModel {
     var title: String {
         switch permissionKind {
             case .camera:
-                return "Camera"
+                return "permission.camera.title".localized
             case .notifications:
-                return "Notifications"
+                return "permission.notifications.title".localized
             case .location:
-                return "Location"
+                return "permission.location.title".localized
         }
     }
 
     var description: String {
         switch permissionKind {
             case .camera:
-                return "Camera"
+                return "permission.camera.description".localized
             case .notifications:
-                return "Notifications"
+                return "permission.notifications.description".localized
             case .location:
-                return "Location"
+                return "permission.location.description".localized
         }
     }
 

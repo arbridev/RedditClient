@@ -34,6 +34,8 @@
 		14E27AC8296B2C0D00B66415 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC7296B2C0D00B66415 /* UIView.swift */; };
 		14E27ACB296B5F1800B66415 /* NoResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC9296B5F1800B66415 /* NoResultsViewController.swift */; };
 		14E27ACC296B5F1800B66415 /* NoResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E27ACA296B5F1800B66415 /* NoResultsViewController.xib */; };
+		14E27AD3296BB5BD00B66415 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AD2296BB5BD00B66415 /* String+Localization.swift */; };
+		14E27AD5296BB62A00B66415 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14E27AD4296BB62A00B66415 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		14E27AC7296B2C0D00B66415 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		14E27AC9296B5F1800B66415 /* NoResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsViewController.swift; sourceTree = "<group>"; };
 		14E27ACA296B5F1800B66415 /* NoResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoResultsViewController.xib; sourceTree = "<group>"; };
+		14E27AD2296BB5BD00B66415 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		14E27AD4296BB62A00B66415 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 				14E27AC3296B1F0A00B66415 /* UIColor.swift */,
 				14E27AC5296B1F3400B66415 /* UIImage.swift */,
 				14E27AC7296B2C0D00B66415 /* UIView.swift */,
+				14E27AD2296BB5BD00B66415 /* String+Localization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				144317E02967C12400E63723 /* Protocols */,
 				144317E12967C13600E63723 /* Extensions */,
 				144317E62967C2E200E63723 /* Enums */,
+				14E27AD4296BB62A00B66415 /* Localizable.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AC14A929675CCB00390564 /* LaunchScreen.storyboard in Resources */,
+				14E27AD5296BB62A00B66415 /* Localizable.strings in Resources */,
 				14AC14A629675CCB00390564 /* Assets.xcassets in Resources */,
 				14AC14A429675CC600390564 /* Main.storyboard in Resources */,
 				14E27ABB296B03C100B66415 /* PostTableViewCell.xib in Resources */,
@@ -367,6 +374,7 @@
 				14AC14B3296775EB00390564 /* HomeViewController.swift in Sources */,
 				149A36C62968BD4400B04CA7 /* LocationService.swift in Sources */,
 				144317E82967C30A00E63723 /* PermissionKind.swift in Sources */,
+				14E27AD3296BB5BD00B66415 /* String+Localization.swift in Sources */,
 				149A36D42969B2A700B04CA7 /* HomeViewModel.swift in Sources */,
 				14E27AC8296B2C0D00B66415 /* UIView.swift in Sources */,
 				1435824B2968735E00BED547 /* PermissionViewModel.swift in Sources */,
@@ -571,8 +579,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedditClient/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camere usage take photos";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location when in use to find friends nearby";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera usage to take photos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location when in use to find friends nearby";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -602,8 +610,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RedditClient/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camere usage take photos";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location when in use to find friends nearby";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera usage to take photos";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location when in use to find friends nearby";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -12,20 +12,20 @@ final class PermissionViewModelTests: XCTestCase {
 
     func test_when_permission_is_camera() throws {
         let permissionVM = PermissionViewModel(permissionKind: .camera)
-        XCTAssertEqual(permissionVM.title, "Camera")
-        XCTAssertEqual(permissionVM.description, "Camera")
+        XCTAssertEqual(permissionVM.title, "permission.camera.title".localized)
+        XCTAssertEqual(permissionVM.description, "permission.camera.description".localized)
     }
 
     func test_when_permission_is_notifications() throws {
         let permissionVM = PermissionViewModel(permissionKind: .notifications)
-        XCTAssertEqual(permissionVM.title, "Notifications")
-        XCTAssertEqual(permissionVM.description, "Notifications")
+        XCTAssertEqual(permissionVM.title, "permission.notifications.title".localized)
+        XCTAssertEqual(permissionVM.description, "permission.notifications.description".localized)
     }
 
     func test_when_permission_is_location() throws {
         let permissionVM = PermissionViewModel(permissionKind: .location)
-        XCTAssertEqual(permissionVM.title, "Location")
-        XCTAssertEqual(permissionVM.description, "Location")
+        XCTAssertEqual(permissionVM.title, "permission.location.title".localized)
+        XCTAssertEqual(permissionVM.description, "permission.location.description".localized)
     }
 
 }
