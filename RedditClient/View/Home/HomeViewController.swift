@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
 
     private let tblRefreshControl = UIRefreshControl()
 
+    private var noResultsView: UIView?
+
     @IBOutlet weak private var btnConfiguration: UIButton!
     @IBOutlet weak private var txtSearch: UITextField!
     @IBOutlet weak private var tblPosts: UITableView!
@@ -31,11 +33,19 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtSearch.leftView = getSearchTextFieldLeftView()
+        txtSearch.leftViewMode = .always
         txtSearch.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
+        tblPosts.register(PostTableViewCell.nib, forCellReuseIdentifier: PostTableViewCell.identifier)
         tblPosts.dataSource = self
+        tblPosts.separatorStyle = .none
+        tblPosts.showsVerticalScrollIndicator = false
         tblPosts.refreshControl = tblRefreshControl
+        tblPosts.keyboardDismissMode = .onDrag
         tblRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+
+        setNoResultsView()
 
         viewModel.updateUI = {
             self.update()
@@ -44,11 +54,6 @@ class HomeViewController: UIViewController {
         let searchPublisher = NotificationCenter.default
             .publisher(for: UITextField.textDidChangeNotification, object: txtSearch)
         viewModel.searchPublisher = searchPublisher
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
         viewModel.loadPosts()
     }
 
@@ -71,6 +76,36 @@ class HomeViewController: UIViewController {
         print("updating ui")
         tblPosts.reloadData()
         tblRefreshControl.endRefreshing()
+        showNoResults(viewModel.posts.isEmpty)
+    }
+
+    private func getSearchTextFieldLeftView() -> UIImageView {
+        let searchIcon = UIImageView(image: UIImage.Icon.magnifyingGlass)
+        searchIcon.tintColor = .lightGray
+        searchIcon.contentMode = .scaleAspectFit
+        searchIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        searchIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        return searchIcon
+    }
+
+    private func setNoResultsView() {
+        noResultsView = NoResultsViewController(nibName: "NoResultsViewController", bundle: nil).view
+        guard let noResultsView else {
+            return
+        }
+        noResultsView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(noResultsView)
+
+        noResultsView.topAnchor.constraint(equalTo: tblPosts.topAnchor).isActive = true
+        noResultsView.bottomAnchor.constraint(equalTo: tblPosts.bottomAnchor).isActive = true
+        noResultsView.leadingAnchor.constraint(equalTo: tblPosts.leadingAnchor).isActive = true
+        noResultsView.trailingAnchor.constraint(equalTo: tblPosts.trailingAnchor).isActive = true
+
+        showNoResults(false)
+    }
+
+    private func showNoResults(_ show: Bool) {
+        noResultsView?.isHidden = !show
     }
 
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -95,20 +130,12 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = viewModel.posts[indexPath.row]
-
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        }
-
-        var content = cell?.defaultContentConfiguration()
-        content?.text = post.data.title
-        content?.secondaryText = post.data.url
-
-        cell?.contentConfiguration = content
-
-        return cell!
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: PostTableViewCell.identifier,
+            for: indexPath
+        ) as! PostTableViewCell
+        cell.config(post: post)
+        return cell
     }
 
 }
