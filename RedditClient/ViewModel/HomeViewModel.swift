@@ -52,8 +52,9 @@ class HomeViewModel {
                 .catch { _ in
                     return Empty()
                 }
-                    .map({ $0 })
-        }).sink { result in
+                .map({ $0 })
+        })
+        .sink { result in
             print("Result", result)
         } receiveValue: { [weak self] posts in
             let filtered = posts.filter({

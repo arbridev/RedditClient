@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak private var tblPosts: UITableView!
 
     // MARK: Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,7 +89,7 @@ class HomeViewController: UIViewController {
     }
 
     private func setNoResultsView() {
-        noResultsView = NoResultsViewController(nibName: "NoResultsViewController", bundle: nil).view
+        noResultsView = NoResultsViewController(nibName: NoResultsViewController.identifier, bundle: nil).view
         guard let noResultsView else {
             return
         }
