@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
 
     private let tblRefreshControl = UIRefreshControl()
 
+    private var noResultsView: UIView?
+
     @IBOutlet weak private var btnConfiguration: UIButton!
     @IBOutlet weak private var txtSearch: UITextField!
     @IBOutlet weak private var tblPosts: UITableView!
@@ -40,7 +42,10 @@ class HomeViewController: UIViewController {
         tblPosts.separatorStyle = .none
         tblPosts.showsVerticalScrollIndicator = false
         tblPosts.refreshControl = tblRefreshControl
+        tblPosts.keyboardDismissMode = .onDrag
         tblRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+
+        setNoResultsView()
 
         viewModel.updateUI = {
             self.update()
@@ -71,6 +76,7 @@ class HomeViewController: UIViewController {
         print("updating ui")
         tblPosts.reloadData()
         tblRefreshControl.endRefreshing()
+        showNoResults(viewModel.posts.isEmpty)
     }
 
     private func getSearchTextFieldLeftView() -> UIImageView {
@@ -80,6 +86,26 @@ class HomeViewController: UIViewController {
         searchIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
         searchIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
         return searchIcon
+    }
+
+    private func setNoResultsView() {
+        noResultsView = NoResultsViewController(nibName: "NoResultsViewController", bundle: nil).view
+        guard let noResultsView else {
+            return
+        }
+        noResultsView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(noResultsView)
+
+        noResultsView.topAnchor.constraint(equalTo: tblPosts.topAnchor).isActive = true
+        noResultsView.bottomAnchor.constraint(equalTo: tblPosts.bottomAnchor).isActive = true
+        noResultsView.leadingAnchor.constraint(equalTo: tblPosts.leadingAnchor).isActive = true
+        noResultsView.trailingAnchor.constraint(equalTo: tblPosts.trailingAnchor).isActive = true
+
+        showNoResults(false)
+    }
+
+    private func showNoResults(_ show: Bool) {
+        noResultsView?.isHidden = !show
     }
 
     @objc func textFieldDidChange(_ textField: UITextField) {

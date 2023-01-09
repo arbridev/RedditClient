@@ -32,6 +32,8 @@
 		14E27AC4296B1F0A00B66415 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC3296B1F0A00B66415 /* UIColor.swift */; };
 		14E27AC6296B1F3400B66415 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC5296B1F3400B66415 /* UIImage.swift */; };
 		14E27AC8296B2C0D00B66415 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC7296B2C0D00B66415 /* UIView.swift */; };
+		14E27ACB296B5F1800B66415 /* NoResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AC9296B5F1800B66415 /* NoResultsViewController.swift */; };
+		14E27ACC296B5F1800B66415 /* NoResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E27ACA296B5F1800B66415 /* NoResultsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		14E27AC3296B1F0A00B66415 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		14E27AC5296B1F3400B66415 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		14E27AC7296B2C0D00B66415 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		14E27AC9296B5F1800B66415 /* NoResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsViewController.swift; sourceTree = "<group>"; };
+		14E27ACA296B5F1800B66415 /* NoResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoResultsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 				14AC14B2296775EB00390564 /* HomeViewController.swift */,
 				14E27AB8296B03C100B66415 /* PostTableViewCell.swift */,
 				14E27AB9296B03C100B66415 /* PostTableViewCell.xib */,
+				14E27AC9296B5F1800B66415 /* NoResultsViewController.swift */,
+				14E27ACA296B5F1800B66415 /* NoResultsViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				14AC14A629675CCB00390564 /* Assets.xcassets in Resources */,
 				14AC14A429675CC600390564 /* Main.storyboard in Resources */,
 				14E27ABB296B03C100B66415 /* PostTableViewCell.xib in Resources */,
+				14E27ACC296B5F1800B66415 /* NoResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +373,7 @@
 				1435824629685FC700BED547 /* PersistenceService.swift in Sources */,
 				14E27AC6296B1F3400B66415 /* UIImage.swift in Sources */,
 				149A36C82969134C00B04CA7 /* NetworkService.swift in Sources */,
+				14E27ACB296B5F1800B66415 /* NoResultsViewController.swift in Sources */,
 				14AC14B52967762700390564 /* PermissionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

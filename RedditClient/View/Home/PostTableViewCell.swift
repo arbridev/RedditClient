@@ -30,11 +30,12 @@ class PostTableViewCell: UITableViewCell {
 
     func config(post: Post) {
         let placeholder = UIImage.Background.defaultStyle
-        imgPicture.kf.setImage(
-            with: URL(string: post.data.url),
-            placeholder: placeholder) { [weak self] result in
-                self?.imgPicture.clipsToBounds = true
-            }
+        KF.url(URL(string: post.data.url))
+          .placeholder(placeholder)
+          .loadDiskFileSynchronously()
+          .cacheMemoryOnly()
+          .fade(duration: 0.25)
+          .set(to: imgPicture)
         lblTitle.text = post.data.title
         lblScore.text = String(post.data.score)
     }

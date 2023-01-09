@@ -135,13 +135,10 @@
                                     <constraint firstItem="x2V-gP-rxK" firstAttribute="leading" secondItem="aoL-3v-ZZc" secondAttribute="trailing" id="9Kh-27-Z3p"/>
                                     <constraint firstItem="Wso-Ow-CWx" firstAttribute="top" secondItem="x2V-gP-rxK" secondAttribute="bottom" id="Bjl-Yb-a1E"/>
                                     <constraint firstItem="x2V-gP-rxK" firstAttribute="top" secondItem="R1F-co-lNe" secondAttribute="top" id="Fld-0x-ZFf"/>
-                                    <constraint firstAttribute="leading" secondItem="R1F-co-lNe" secondAttribute="leading" id="GbD-u2-FsK"/>
                                     <constraint firstItem="aoL-3v-ZZc" firstAttribute="width" secondItem="R1F-co-lNe" secondAttribute="width" multiplier="0.15" constant="1" id="NvQ-f6-asn"/>
                                     <constraint firstAttribute="trailing" secondItem="x2V-gP-rxK" secondAttribute="trailing" id="OOx-fE-iyA"/>
                                     <constraint firstItem="Wso-Ow-CWx" firstAttribute="leading" secondItem="aoL-3v-ZZc" secondAttribute="trailing" id="RDu-VG-S4d"/>
-                                    <constraint firstAttribute="bottom" secondItem="R1F-co-lNe" secondAttribute="bottom" id="Tah-lL-wyL"/>
                                     <constraint firstItem="aoL-3v-ZZc" firstAttribute="top" secondItem="R1F-co-lNe" secondAttribute="top" id="VOL-dC-dtG"/>
-                                    <constraint firstAttribute="trailing" secondItem="R1F-co-lNe" secondAttribute="trailing" id="a6e-Qf-F4W"/>
                                     <constraint firstItem="aoL-3v-ZZc" firstAttribute="leading" secondItem="R1F-co-lNe" secondAttribute="leading" id="bsl-km-qfA"/>
                                     <constraint firstAttribute="trailing" secondItem="Wso-Ow-CWx" secondAttribute="trailing" id="e6D-Rc-NkD"/>
                                 </constraints>
