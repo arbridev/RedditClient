@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
 
         txtSearch.leftView = getSearchTextFieldLeftView()
         txtSearch.leftViewMode = .always
-        txtSearch.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         tblPosts.register(PostTableViewCell.nib, forCellReuseIdentifier: PostTableViewCell.identifier)
         tblPosts.dataSource = self
@@ -51,9 +50,7 @@ class HomeViewController: UIViewController {
             self.update()
         }
 
-        let searchPublisher = NotificationCenter.default
-            .publisher(for: UITextField.textDidChangeNotification, object: txtSearch)
-        viewModel.searchPublisher = searchPublisher
+        viewModel.searchPublisher = txtSearch.textPublisher
         viewModel.loadPosts()
     }
 
@@ -108,14 +105,8 @@ class HomeViewController: UIViewController {
         noResultsView?.isHidden = !show
     }
 
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        if let text = textField.text, text.isEmpty {
-            viewModel.loadPosts()
-        }
-    }
-
     @objc func pullToRefresh() {
-        viewModel.loadPosts()
+        viewModel.paginate()
     }
 
 }

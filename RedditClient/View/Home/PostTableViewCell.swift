@@ -14,6 +14,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak private var imgPicture: UIImageView!
     @IBOutlet weak private var lblTitle: UILabel!
     @IBOutlet weak private var lblScore: UILabel!
+    @IBOutlet weak private var lblCommentCount: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +39,7 @@ class PostTableViewCell: UITableViewCell {
           .set(to: imgPicture)
         lblTitle.text = post.data.title
         lblScore.text = String(post.data.score)
+        lblCommentCount.text = String(post.data.numComments)
     }
 
 }

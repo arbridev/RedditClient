@@ -35,6 +35,8 @@
 		14E27ACC296B5F1800B66415 /* NoResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E27ACA296B5F1800B66415 /* NoResultsViewController.xib */; };
 		14E27AD3296BB5BD00B66415 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AD2296BB5BD00B66415 /* String+Localization.swift */; };
 		14E27AD5296BB62A00B66415 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14E27AD4296BB62A00B66415 /* Localizable.strings */; };
+		14E27ADF296CA22000B66415 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27ADE296CA22000B66415 /* Post.swift */; };
+		14E27AE1296CA86600B66415 /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E27AE0296CA86600B66415 /* UITextField+Publisher.swift */; };
 		9031F7400625433C7CD13D5C /* Pods_RedditClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E101F4C61B5E3A2F2D999F04 /* Pods_RedditClientTests.framework */; };
 		AB33175FF302FC595A855FF7 /* Pods_RedditClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C06D67CDCC32332BD6A8FC /* Pods_RedditClient.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		14E27AD4296BB62A00B66415 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		14E27ADB296C67CC00B66415 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		14E27ADD296C7EDC00B66415 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		14E27ADE296CA22000B66415 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		14E27AE0296CA86600B66415 /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		4568A70F277D1D357D7EEC76 /* Pods-RedditClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditClient.debug.xcconfig"; path = "Target Support Files/Pods-RedditClient/Pods-RedditClient.debug.xcconfig"; sourceTree = "<group>"; };
 		84BEAF151B4EA5339B338EC6 /* Pods-RedditClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditClientTests.debug.xcconfig"; path = "Target Support Files/Pods-RedditClientTests/Pods-RedditClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86C06D67CDCC32332BD6A8FC /* Pods_RedditClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +171,7 @@
 				14E27AC5296B1F3400B66415 /* UIImage.swift */,
 				14E27AC7296B2C0D00B66415 /* UIView.swift */,
 				14E27AD2296BB5BD00B66415 /* String+Localization.swift */,
+				14E27AE0296CA86600B66415 /* UITextField+Publisher.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				149A36D1296926A700B04CA7 /* PostsResponse.swift */,
+				14E27ADE296CA22000B66415 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AC14B82967884100390564 /* Constants.swift in Sources */,
+				14E27ADF296CA22000B66415 /* Post.swift in Sources */,
 				14E27AC2296B196500B66415 /* UITableViewCell.swift in Sources */,
 				144317E32967C15E00E63723 /* Instantiable.swift in Sources */,
 				14E27ABA296B03C100B66415 /* PostTableViewCell.swift in Sources */,
@@ -493,6 +500,7 @@
 				14E27AC8296B2C0D00B66415 /* UIView.swift in Sources */,
 				1435824B2968735E00BED547 /* PermissionViewModel.swift in Sources */,
 				1435824629685FC700BED547 /* PersistenceService.swift in Sources */,
+				14E27AE1296CA86600B66415 /* UITextField+Publisher.swift in Sources */,
 				14E27AC6296B1F3400B66415 /* UIImage.swift in Sources */,
 				149A36C82969134C00B04CA7 /* NetworkService.swift in Sources */,
 				14E27ACB296B5F1800B66415 /* NoResultsViewController.swift in Sources */,

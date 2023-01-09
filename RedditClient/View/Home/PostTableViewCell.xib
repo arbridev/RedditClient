@@ -167,6 +167,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="imgPicture" destination="VfL-X4-QJL" id="d90-jl-1wx"/>
+                <outlet property="lblCommentCount" destination="lGq-ls-IBn" id="CjX-8H-9jO"/>
                 <outlet property="lblScore" destination="FHT-54-ts5" id="RIn-QH-UU5"/>
                 <outlet property="lblTitle" destination="KbQ-gN-ycu" id="pPv-60-FMI"/>
                 <outlet property="vwInnerContent" destination="zbr-VY-VG1" id="YiK-x7-06u"/>
