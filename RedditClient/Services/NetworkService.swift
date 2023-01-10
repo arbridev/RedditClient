@@ -10,14 +10,17 @@ import Combine
 
 protocol RedditService {
 
-    func fetchAll(after page: String?) -> AnyPublisher<([Post], String), Error>
-    func fetchSearch(withQuery query: String) -> AnyPublisher<[Post], Error>
+    func fetchAll(after page: String?) -> AnyPublisher<([Post], String?), Error>
+    func fetchSearch(
+        withQuery query: String,
+        after page: String?
+    ) -> AnyPublisher<([Post], String?), Error>
 
 }
 
 class NetworkService: RedditService {
 
-    func fetchAll(after page: String? = nil) -> AnyPublisher<([Post], String), Error> {
+    func fetchAll(after page: String? = nil) -> AnyPublisher<([Post], String?), Error> {
         let url: URL = page == nil ? URL.all : URL.all(after: page!)
         return URLSession.shared.dataTaskPublisher(for: url)
             .map({ $0.data })
@@ -27,11 +30,17 @@ class NetworkService: RedditService {
             .eraseToAnyPublisher()
     }
 
-    func fetchSearch(withQuery query: String) -> AnyPublisher<[Post], Error> {
-        return URLSession.shared.dataTaskPublisher(for: .search(withQuery: query))
+    func fetchSearch(
+        withQuery query: String,
+        after page: String? = nil
+    ) -> AnyPublisher<([Post], String?), Error> {
+        let url: URL = page == nil ?
+        URL.search(withQuery: query) :
+        URL.search(withQuery: query, after: page!)
+        return URLSession.shared.dataTaskPublisher(for: url)
             .map({ $0.data })
             .decode(type: PostsResponse.self, decoder: JSONDecoder())
-            .map({ $0.data.children })
+            .map({ ($0.data.children, $0.data.after) })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
@@ -50,6 +59,10 @@ fileprivate extension URL {
 
     static func search(withQuery query: String) -> URL {
         makeForEndpoint("r/chile/search.json?q=\(query)&limit=100")
+    }
+
+    static func search(withQuery query: String, after page: String) -> URL {
+        makeForEndpoint("r/chile/search.json?q=\(query)&limit=100&after=\(page)")
     }
 
     static func makeForEndpoint(_ endpoint: String) -> URL {

@@ -37,7 +37,7 @@ class PermissionViewController: UIViewController {
     @IBAction private func onTouchOk(_ sender: UIButton) {
         allowOrEnable()
     }
-    
+
     @IBAction private func onTouchCancel(_ sender: UIButton) {
         goNext()
     }
@@ -48,9 +48,9 @@ class PermissionViewController: UIViewController {
             return
         }
 
-        let vc = PermissionViewController.instantiate()
-        vc.viewModel.permissionKind = nextPermissionKind
-        navigationController?.pushViewController(vc, animated: true)
+        let vcnt = PermissionViewController.instantiate()
+        vcnt.viewModel.permissionKind = nextPermissionKind
+        navigationController?.pushViewController(vcnt, animated: true)
     }
 
     private func allowOrEnable() {
@@ -100,5 +100,5 @@ class PermissionViewController: UIViewController {
         button.layer.insertSublayer(layer, at: 0)
         button.setTitleColor(.white, for: .normal)
     }
-    
+
 }

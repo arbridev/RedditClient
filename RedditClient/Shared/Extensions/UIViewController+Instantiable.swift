@@ -22,12 +22,12 @@ extension UIViewController: Instantiable {
     }
 
     static func instantiate() -> Self {
-        guard let vc = UIStoryboard(name: storyboard, bundle: bundle)
+        guard let vcnt = UIStoryboard(name: storyboard, bundle: bundle)
             .instantiateViewController(withIdentifier: identifier) as? Self else {
             fatalError("Could not instantiate view controller with identifier \(identifier)")
         }
 
-        return vc
+        return vcnt
     }
 
 }

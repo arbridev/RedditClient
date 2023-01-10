@@ -13,7 +13,7 @@ class PersistenceService {
         static let isPermissionFlowComplete = "isPermissionFlowComplete"
     }
 
-    private let persistence: UserDefaults = UserDefaults.standard
+    private let persistence = UserDefaults.standard
 
     var isPermissionFlowComplete: Bool {
         get {

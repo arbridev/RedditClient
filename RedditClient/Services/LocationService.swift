@@ -11,7 +11,7 @@ import CoreLocation
 class LocationService: NSObject {
 
     private var locationManager: CLLocationManager!
-    private var authorizationChangedToEnabled: (Bool) -> Void = {_ in }
+    private var authorizationChangedToEnabled: (Bool) -> Void = { _ in }
 
     override init() {
         super.init()

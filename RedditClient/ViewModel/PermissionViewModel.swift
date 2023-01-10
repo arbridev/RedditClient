@@ -78,7 +78,7 @@ class PermissionViewModel {
 
     func enableNotifications(completion: ((Bool) -> Void)?) {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
             if let error {
                 print(error)
                 completion?(false)
