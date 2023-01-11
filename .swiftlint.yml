@@ -1,9 +1,11 @@
 excluded:
   - Pods
+  - RedditClient/Shared/SecurePersistence
 
 disabled_rules:
   - force_cast
   - nesting
+  - trailing_whitespace
 
 opt_in_rules:
   - switch_case_alignment

@@ -11,7 +11,7 @@ import UserNotifications
 
 class PermissionViewModel {
 
-    private let persistenceService = PersistenceService()
+    private var persistence: Persistence!
     private let locationService = LocationService()
 
     var permissionKind: PermissionKind = .camera
@@ -38,8 +38,12 @@ class PermissionViewModel {
         }
     }
 
-    init(permissionKind: PermissionKind) {
+    init(
+        permissionKind: PermissionKind,
+        persistence: Persistence = PersistenceService()
+    ) {
         self.permissionKind = permissionKind
+        self.persistence = persistence
     }
 
     func nextPermission() -> PermissionKind? {
@@ -50,7 +54,7 @@ class PermissionViewModel {
             nextPermissionKind = navFlow[navFlowIndex + 1]
         } else {
             // We are in the last screen of the permissions flow
-            persistenceService.isPermissionFlowComplete = true
+            persistence.isPermissionFlowComplete = true
         }
         return nextPermissionKind
     }

@@ -13,6 +13,11 @@
 		144317E32967C15E00E63723 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E22967C15E00E63723 /* Instantiable.swift */; };
 		144317E52967C19800E63723 /* UIViewController+Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E42967C19800E63723 /* UIViewController+Instantiable.swift */; };
 		144317E82967C30A00E63723 /* PermissionKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144317E72967C30A00E63723 /* PermissionKind.swift */; };
+		1459E520296EE7FA00DEB9FC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E51F296EE7FA00DEB9FC /* Persistence.swift */; };
+		1459E522296EE83E00DEB9FC /* SecurePersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E521296EE83E00DEB9FC /* SecurePersistenceService.swift */; };
+		1459E526296EEC7B00DEB9FC /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E524296EEC7B00DEB9FC /* KeychainWrapper.swift */; };
+		1459E527296EEC7B00DEB9FC /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E525296EEC7B00DEB9FC /* KeychainItemAccessibility.swift */; };
+		1459E529296EEFC500DEB9FC /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E528296EEFC500DEB9FC /* PersistenceTests.swift */; };
 		149A36C62968BD4400B04CA7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A36C52968BD4400B04CA7 /* LocationService.swift */; };
 		149A36C82969134C00B04CA7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A36C72969134C00B04CA7 /* NetworkService.swift */; };
 		149A36D2296926A700B04CA7 /* PostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A36D1296926A700B04CA7 /* PostsResponse.swift */; };
@@ -59,6 +64,11 @@
 		144317E22967C15E00E63723 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
 		144317E42967C19800E63723 /* UIViewController+Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiable.swift"; sourceTree = "<group>"; };
 		144317E72967C30A00E63723 /* PermissionKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionKind.swift; sourceTree = "<group>"; };
+		1459E51F296EE7FA00DEB9FC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1459E521296EE83E00DEB9FC /* SecurePersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurePersistenceService.swift; sourceTree = "<group>"; };
+		1459E524296EEC7B00DEB9FC /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		1459E525296EEC7B00DEB9FC /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		1459E528296EEFC500DEB9FC /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
 		149A36C52968BD4400B04CA7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		149A36C72969134C00B04CA7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		149A36D1296926A700B04CA7 /* PostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsResponse.swift; sourceTree = "<group>"; };
@@ -131,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				1435824529685FC700BED547 /* PersistenceService.swift */,
+				1459E521296EE83E00DEB9FC /* SecurePersistenceService.swift */,
 				149A36C52968BD4400B04CA7 /* LocationService.swift */,
 				149A36C72969134C00B04CA7 /* NetworkService.swift */,
 			);
@@ -150,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				143582592968766900BED547 /* PermissionViewModelTests.swift */,
+				1459E528296EEFC500DEB9FC /* PersistenceTests.swift */,
 			);
 			path = RedditClientTests;
 			sourceTree = "<group>";
@@ -158,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				144317E22967C15E00E63723 /* Instantiable.swift */,
+				1459E51F296EE7FA00DEB9FC /* Persistence.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -182,6 +195,15 @@
 				144317E72967C30A00E63723 /* PermissionKind.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		1459E523296EE8C800DEB9FC /* SecurePersistence */ = {
+			isa = PBXGroup;
+			children = (
+				1459E525296EEC7B00DEB9FC /* KeychainItemAccessibility.swift */,
+				1459E524296EEC7B00DEB9FC /* KeychainWrapper.swift */,
+			);
+			path = SecurePersistence;
 			sourceTree = "<group>";
 		};
 		149A36D0296925B100B04CA7 /* Model */ = {
@@ -250,6 +272,7 @@
 				144317E02967C12400E63723 /* Protocols */,
 				144317E12967C13600E63723 /* Extensions */,
 				144317E62967C2E200E63723 /* Enums */,
+				1459E523296EE8C800DEB9FC /* SecurePersistence */,
 				14E27AD4296BB62A00B66415 /* Localizable.strings */,
 			);
 			path = Shared;
@@ -475,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1435825A2968766900BED547 /* PermissionViewModelTests.swift in Sources */,
+				1459E529296EEFC500DEB9FC /* PersistenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,9 +515,12 @@
 				14AC149D29675CC600390564 /* AppDelegate.swift in Sources */,
 				14E27AC4296B1F0A00B66415 /* UIColor.swift in Sources */,
 				14AC149F29675CC600390564 /* SceneDelegate.swift in Sources */,
+				1459E520296EE7FA00DEB9FC /* Persistence.swift in Sources */,
 				149A36D2296926A700B04CA7 /* PostsResponse.swift in Sources */,
+				1459E526296EEC7B00DEB9FC /* KeychainWrapper.swift in Sources */,
 				14AC14B3296775EB00390564 /* HomeViewController.swift in Sources */,
 				149A36C62968BD4400B04CA7 /* LocationService.swift in Sources */,
+				1459E522296EE83E00DEB9FC /* SecurePersistenceService.swift in Sources */,
 				144317E82967C30A00E63723 /* PermissionKind.swift in Sources */,
 				14E27AD3296BB5BD00B66415 /* String+Localization.swift in Sources */,
 				149A36D42969B2A700B04CA7 /* HomeViewModel.swift in Sources */,
@@ -502,6 +529,7 @@
 				1435824629685FC700BED547 /* PersistenceService.swift in Sources */,
 				14E27AE1296CA86600B66415 /* UITextField+Publisher.swift in Sources */,
 				14E27AC6296B1F3400B66415 /* UIImage.swift in Sources */,
+				1459E527296EEC7B00DEB9FC /* KeychainItemAccessibility.swift in Sources */,
 				149A36C82969134C00B04CA7 /* NetworkService.swift in Sources */,
 				14E27ACB296B5F1800B66415 /* NoResultsViewController.swift in Sources */,
 				14AC14B52967762700390564 /* PermissionViewController.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersistenceService {
+class PersistenceService: Persistence {
 
     private struct PersKey {
         static let isPermissionFlowComplete = "isPermissionFlowComplete"
